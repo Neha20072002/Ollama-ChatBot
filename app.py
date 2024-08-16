@@ -17,7 +17,7 @@ os.environ["LANGCHAIN_PROJECT"]="Simple Q&A Chatbot With Ollama"
 ## Prompt Template
 prompt=ChatPromptTemplate.from_messages(
     [
-        ("system","You are a helpful massistant . Please  repsonse to the user queries"),
+        ("system","You are a helpful Ollama Assisstant . Please ask for a  repsonse to the user queries"),
         ("user","Question:{question}")
     ]
 )
@@ -30,11 +30,11 @@ def generate_response(question,llm,temperature,max_tokens):
     return answer
 
 ## #Title of the app
-st.title("Enhanced Q&A Chatbot With OpenAI")
+st.title("Enhanced Q&A Chatbot With Ollama Models")
 
 
 ## Select the OpenAI model
-llm=st.sidebar.selectbox("Select Open Source model",["mistral",""gemma2])
+llm=st.sidebar.selectbox("Select Open Source model",["mistral","gemma2"])
 
 ## Adjust response parameter
 temperature=st.sidebar.slider("Temperature",min_value=0.0,max_value=1.0,value=0.7)
